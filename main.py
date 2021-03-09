@@ -2,10 +2,13 @@ import button
 import os
 import logging
 import callback_button
+from dotenv import load_dotenv
 from aiogram.types import CallbackQuery, InputMediaPhoto
 from aiogram import Bot, Dispatcher, executor, types
 from act_file import get_file
 from sqliconnect import SQLiconnect
+
+load_dotenv()
 
 bot = Bot(str(os.getenv('API_TOKEN')))
 dp = Dispatcher(bot)
