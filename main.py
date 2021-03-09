@@ -8,7 +8,7 @@ from act_file import get_file
 from sqliconnect import SQLiconnect
 
 
-bot = Bot(os.getenv('API_TOKEN'))
+bot = Bot(str(os.getenv('API_TOKEN')))
 dp = Dispatcher(bot)
 
 db = SQLiconnect('db/db.db')
