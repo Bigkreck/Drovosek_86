@@ -11,7 +11,7 @@ from sqliconnect import SQLiconnect
 bot = Bot(os.getenv('API_TOKEN'))
 dp = Dispatcher(bot)
 
-db = SQLiconnect('db/db')
+db = SQLiconnect('db/db.db')
 
 
 @dp.message_handler(commands=['start', 'help', 'uploadimage'])
