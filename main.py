@@ -7,7 +7,6 @@ from aiogram import Bot, Dispatcher, executor, types
 from act_file import get_file
 from sqliconnect import SQLiconnect
 
-
 bot = Bot(str(os.getenv('API_TOKEN')))
 dp = Dispatcher(bot)
 
