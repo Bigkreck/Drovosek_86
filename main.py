@@ -1,5 +1,6 @@
 import config
 import button
+import os
 
 from aiogram.types import CallbackQuery, InputMediaPhoto
 from aiogram import Bot, Dispatcher, executor, types
@@ -8,7 +9,7 @@ from sqliconnect import SQLiconnect
 import logging
 import callback_button
 
-bot = Bot(config.API_TOKEN)
+bot = Bot(os.getenv('API_TOKEN'))
 dp = Dispatcher(bot)
 
 db = SQLiconnect('db/db')
