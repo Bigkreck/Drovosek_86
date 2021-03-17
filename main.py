@@ -46,7 +46,8 @@ async def see_product(call: CallbackQuery, callback_data: dict):
     await call.message.delete()
     callback_data = call.data
     logging.info(f'call={callback_data}')
-    load_photo = db.get_product_image(item.lower())
+    str_item = item.lower()
+    load_photo = db.get_product_image(str_item)
     group_image = []
     for i in load_photo:
         group_image.append(InputMediaPhoto(i[1], get_file(f'info/{item.lower()}_info.txt')))
