@@ -49,9 +49,11 @@ async def see_product(call: CallbackQuery, callback_data: dict):
     str_item = item.lower()
     load_photo = db.get_product_image(str_item)
     group_image = []
-    for i in load_photo:
-        group_image.append(InputMediaPhoto(i[1], get_file(f'info/{item.lower()}_info.txt')))
-    await call.message.answer_media_group(group_image)
+    if group_image is not None:
+        for i in load_photo:
+            group_image.append(InputMediaPhoto(i[1], get_file(f'info/{item.lower()}_info.txt')))
+        await call.message.answer_media_group(group_image)
+
     await call.message.answer(text=get_file(f'info/{item.lower()}_info.txt'),
                               reply_markup=button.inline_button_sleb if type=='sleb' else button.inline_markup)
 
